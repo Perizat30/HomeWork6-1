@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+
+    id 'kotlin-kapt'                 // Apply the kotlin-kapt plugin
+    id 'com.google.dagger.hilt.android'   // Apply the Dagger Hilt plugin
 }
 
 android {
@@ -15,6 +18,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/api/\"")
     }
 
     buildTypes {
@@ -32,7 +37,15 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
+
+}
+ext {
+    lifecycleVersion = "2.7.0"
+    retrofitVersion = "2.9.0"
+    okHttpClientVersion = "4.12.0"
+    daggerHiltVersion = "2.50"
 }
 
 dependencies {
@@ -41,7 +54,31 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-basement:18.3.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+
+    // LiveData
+    implementation ("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+
+    //OkHttpClient
+    implementation("com.squareup.okhttp3:okhttp:$okHttpClientVersion")
+    implementation("com.squareup.okhttp3:logging-interceptor:$okHttpClientVersion")
+
+    //Dagger Hilt
+    implementation "com.google.dagger:hilt-android:$daggerHiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$daggerHiltVersion"
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
 }
