@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <ImageView
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="32sp"
-            android:text="Name"
+            android:text="@string/name"
             android:textStyle="bold"
             android:textColor="@android:color/black" />
 
@@ -31,20 +31,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:text="Status"/>
+            android:text="@string/status"/>
 
         <TextView
             android:id="@+id/tvSpecies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:hint="Species"/>
+            android:hint="@string/species"/>
 
         <TextView
             android:id="@+id/tvLocationInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:hint="Location"/>
+            android:hint="@string/location"/>
     </LinearLayout>
 </LinearLayout>

@@ -2,10 +2,7 @@ package com.example.homework6_1.data
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.example.homework6_1.data.model.Character
 import com.example.homework6_1.data.model.CharactersResponse
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +20,7 @@ class Repository @Inject constructor(private val apiService: CartoonApiService) 
             ) {
                 if (response.isSuccessful) {
                     val charactersResponse = response.body()
-                    characters.postValue(charactersResponse?.results)
+                    characters.postValue(charactersResponse!!)
                 }
             }
 

@@ -14,16 +14,15 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
     private val viewModel by viewModels<MainViewModel> ()
-
     private val charactersAdapter by lazy{CharactersAdapter()}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setupRecycler()
 
         viewModel.getCharacters().observe(this){
-            charactersAdapter.setCharacters(it)
+            charactersAdapter.setCharacters(it.results)
+            setupRecycler()
         }
     }
     private fun setupRecycler() = with(binding.recyclerView){

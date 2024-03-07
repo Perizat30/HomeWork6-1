@@ -3,7 +3,6 @@ package com.example.homework6_1.ui.characters
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.homework6_1.data.Repository
-import com.example.homework6_1.data.model.Character
 import com.example.homework6_1.data.model.CharactersResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

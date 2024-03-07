@@ -2,4 +2,8 @@
     <string name="app_name">HomeWork6-1</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="name">Name</string>
+    <string name="status">Status</string>
+    <string name="species">Species</string>
+    <string name="location">Location</string>
 </resources>
